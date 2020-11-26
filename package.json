@@ -1,0 +1,25 @@
+{
+  "name": "@dijkstraj/character-editor",
+  "version": "0.0.1",
+  "description": "Create your own HTML-ready character",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "declaration": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jogchem Dijkstra",
+  "license": "Unlicense",
+  "devDependencies": {
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dijkstraj/character-editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dijkstraj/character-editor/issues"
+  },
+  "homepage": "https://github.com/dijkstraj/character-editor#readme"
+}

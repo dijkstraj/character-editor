@@ -1,0 +1,1 @@
+export {bla} from './character';
