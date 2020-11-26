@@ -1,1 +1,2 @@
-export {bla} from './character';
+export {Character} from './character';
+export {encode, decode} from './encoder';

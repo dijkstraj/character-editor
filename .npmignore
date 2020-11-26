@@ -1,4 +1,7 @@
 .gitignore
 .editorconfig
 tsconfig.json
+babel.config.ts
+jest.config.ts
 src
+*.test.ts
