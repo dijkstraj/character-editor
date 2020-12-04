@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        
+
       - name: Read .nvmrc
         run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
         id: nvm
@@ -24,8 +24,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run typescript compiler
-        run: npx tsc
-      
       - name: Execute jest tests
         run: npm run test -- --coverage
+
+      - name: Build it
+        run: npm run build
