@@ -1,6 +1,6 @@
 {
   "name": "@dijkstraj/character-editor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Create your own HTML-ready character",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
