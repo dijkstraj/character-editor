@@ -1,7 +1,12 @@
 .gitignore
 .editorconfig
+.nvmrc
+.prettierrc.json
+.vscode
+.github
 tsconfig.json
-babel.config.ts
+babel.config.js
 jest.config.ts
 src
+coverage
 *.test.ts
