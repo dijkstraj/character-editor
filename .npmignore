@@ -7,6 +7,7 @@
 tsconfig.json
 babel.config.js
 jest.config.ts
+webpack.config.js
 src
 coverage
 *.test.ts
