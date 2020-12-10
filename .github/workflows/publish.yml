@@ -17,8 +17,24 @@ jobs:
           node-version: "${{ steps.nvm.outputs.NVMRC }}"
           registry-url: 'https://registry.npmjs.org'
 
-      - run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-      - run: npm publish --access public
+      - name: Build it
+        run: npm run build
+
+      - name: Publish it to npm
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Upload file to bucket
+        uses: dijkstraj/s3-upload-github-action@master
+        with:
+          args: --acl public-read
+        env:
+          FILE: ./dist/bundle.js
+          S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          S3_KEY: js/@dijkstraj/character-editor/test.js
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
