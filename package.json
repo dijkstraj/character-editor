@@ -7,7 +7,8 @@
   "declaration": true,
   "scripts": {
     "test": "jest",
-    "build": "webpack"
+    "build": "webpack",
+    "examples": "npm run build && ws --static.index examples/index.html"
   },
   "author": "Jogchem Dijkstra",
   "license": "Unlicense",
@@ -19,6 +20,7 @@
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
     "jest": "^26.6.3",
+    "local-web-server": "^4.2.1",
     "prettier": "^2.2.1",
     "terser-webpack-plugin": "^5.0.3",
     "ts-loader": "^8.0.11",

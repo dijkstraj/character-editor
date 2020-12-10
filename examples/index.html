@@ -1,0 +1,41 @@
+<html>
+<head>
+  <script src="../dist/bundle.js"></script>
+  <style>
+    body {
+      overflow: hidden;
+    }
+
+    @keyframes example {
+      from {left: 0%;}
+      to {left: 100%;}
+    }
+  </style>
+</head>
+<body>
+  <script>
+    const r = new CharacterEditor.Renderer();
+    const c = {
+      sprites: [
+        {
+          x: 0,
+          y: 0,
+          sheet: {
+            url: 'https://cdn.glitch.com/4d0ba068-5282-4538-a5ab-bb489c349f99%2FroguelikeChar_transparent.png?v=1606300418679'
+          }
+        }
+      ]
+    };
+    for (let i = 0; i < 100; i++) {
+      const s = r.render(c);
+      s.style.top = `${i}%`;
+      s.style.animationName = 'example';
+      s.style.animationDelay = `${Math.random()}s`;
+      s.style.animationDuration = `${Math.random() + 10}s`;
+      s.style.animationIterationCount = 'infinite';
+      s.style.animationDirection = 'alternate';
+      s.style.animationTimingFunction = 'linear';
+    }
+  </script>
+</body>
+</html>
