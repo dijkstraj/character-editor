@@ -24,7 +24,9 @@ jobs:
         run: npm run build
 
       - name: Publish it to npm
-        run: npm publish --access public
+        run: |
+          npm publish --access public
+          echo "S3_KEY=js/@dijkstraj/character-editor/$(npm show ./ version)/bundle.js" >> $GITHUB_ENV
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -35,6 +37,5 @@ jobs:
         env:
           FILE: ./dist/bundle.js
           S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-          S3_KEY: js/@dijkstraj/character-editor/test.js
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
