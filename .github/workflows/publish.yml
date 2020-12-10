@@ -23,7 +23,7 @@ jobs:
       - name: Build it
         run: |
           npm run build
-          echo "S3_KEY=js/@dijkstraj/character-editor/$(npm show ./ version)/bundle.js" >> $GITHUB_ENV
+          echo "S3_KEY=js/@dijkstraj/character-editor/$(jq -r ".version" package.json)/bundle.js" >> $GITHUB_ENV
 
       - name: Upload file to bucket
         uses: dijkstraj/s3-upload-github-action@master
